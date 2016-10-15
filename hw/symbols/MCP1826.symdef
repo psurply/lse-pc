@@ -1,0 +1,14 @@
+[labels]
+MCP1826
+! device=MCP1826
+refdes=U?
+! footprint=TO220W
+
+[left]
+1 VIN
+
+[right]
+3 VOUT
+
+[bottom]
+2 GND

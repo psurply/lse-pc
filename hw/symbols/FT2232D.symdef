@@ -1,0 +1,75 @@
+# http://www.ftdichip.com/Support/Documents/DataSheets/ICs/DS_FT2232D.pdf
+[labels]
+FT232D
+refdes=U?
+! footprint=LQFP48_7
+
+[top]
+3 Vcc
+42 Vcc
+14 VccIOA
+31 VccIOB
+
+46 AVcc
+
+[left]
+8 USBDM
+7 USBDP
+
+5 ! RSTOUT
+
+43 XTIN
+
+44 XTOUT
+
+4 ! RESET
+
+47 TEST
+
+6 3V3Out
+
+2 EEDATA
+1 EESK
+48 EECS
+
+[right]
+# Channel A
+24 CHA_TXD
+23 CHA_RXD
+22 ! CHA_RTS
+21 ! CHA_CTS
+20 ! CHA_DTR
+19 ! CHA_DSR
+17 ! CHA_DCD
+16 ! CHA_RI
+
+15 CHA_TXDEN
+13 ! CHA_SLEEP
+12 ! CHA_RXLED
+11 ! CHA_TXLED
+
+10 CHA_SIWU
+
+# Channel B
+40 CHB_TXD
+39 CHB_RXD
+38 ! CHB_RTS
+37 ! CHB_CTS
+36 ! CHB_DTR
+35 ! CHB_DSR
+33 ! CHB_DCD
+32 ! CHB_RI
+
+30 CHB_TXDEN
+29 ! CHB_SLEEP
+28 ! CHB_RXLED
+27 ! CHB_TXLED
+
+26 SIWU
+
+[bottom]
+45 AGND
+9 GND
+18 GND
+25 GND
+34 GND

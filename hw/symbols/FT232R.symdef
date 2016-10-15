@@ -1,0 +1,42 @@
+# http://www.ftdichip.com/Support/Documents/DataSheets/ICs/DS_FT232R.pdf
+[labels]
+FT232R
+device=FT232R
+refdes=U?
+! footprint=SSOP28
+
+[left]
+4 VccIO
+20 Vcc
+16 USBDM
+15 USBDP
+
+8 NC
+19 ! RESET
+24 NC
+27 OSCI
+28 OSCO
+
+17 3V3OUT
+
+[right]
+1 TXD
+5 RXD
+3 ! RTS
+11 ! CTS
+2 ! DTR
+9 ! DSR
+10 ! DCD
+6 ! RI
+23 CBUS0
+22 CBUS1
+13 CBUS2
+14 CBUS3
+12 CBUS4
+
+[bottom]
+25 AGND
+7 GND
+18 GND
+21 GND
+26 TEST

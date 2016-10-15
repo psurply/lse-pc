@@ -1,0 +1,33 @@
+# http://www.ftdichip.com/Support/Documents/DataSheets/ICs/DS_FT230X.pdf
+[labels]
+FT230X
+device=FT230X
+refdes=U?
+! footprint=SSOP16
+
+[left]
+9 USBDM
+8 USBDP
+
+11 ! RESET
+
+10 3V3OUT
+
+[top]
+12 Vcc
+3  VccIO
+
+[right]
+1 TXD
+4 RXD
+2 ! RTS
+6 ! CTS
+
+15 CBUS0
+14 CBUS1
+7  CBUS2
+16 CBUS3
+
+[bottom]
+5 GND
+13 GND

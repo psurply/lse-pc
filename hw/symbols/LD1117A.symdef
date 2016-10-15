@@ -1,0 +1,14 @@
+[labels]
+LD1117A
+! device=LD1117A
+refdes=U?
+! footprint=TO220W
+
+[left]
+3 VIN
+
+[right]
+2 VOUT
+
+[bottom]
+1 GND

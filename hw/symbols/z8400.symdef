@@ -1,0 +1,58 @@
+[labels]
+z8400
+device=z8400
+refdes=U?
+footprint=DIP40
+
+[left]
+27 ! M1
+
+19 ! MREQ
+20 ! IORQ
+21 ! RD
+22 ! WR
+
+28 ! RFSH
+
+18 ! HALT
+
+24 ! WAIT
+
+16 ! INT
+17 ! NMI
+
+26 ! RESET
+
+25 ! BUSREQ
+23 ! BUSACK
+
+6 CLK
+11 Vcc
+29 GND
+
+[right]
+30 A0
+31 A1
+32 A2
+33 A3
+34 A4
+35 A5
+36 A6
+37 A7
+38 A8
+39 A9
+40 A10
+1 A11
+2 A12
+3 A13
+4 A14
+5 A15
+
+14 D0
+15 D1
+12 D2
+8 D3
+7 D4
+9 D5
+10 D6
+13 D7

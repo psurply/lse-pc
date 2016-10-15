@@ -1,0 +1,103 @@
+#! /usr/bin/env ocaml
+
+type radix = HEX | BIN
+
+type mif =
+    {
+        width       : int;
+        depth       : int;
+        addr_radix  : radix;
+        data_radix  : radix;
+        mem         : int array;
+    }
+
+type conf =
+    {
+        mutable out_ch          : out_channel;
+        mutable default_value   : int;
+        mutable d               : int;
+        mutable base_addr       : int;
+        mutable input           : string list;
+        mutable laddr           : int list;
+        mutable loffset         : int list;
+    }
+
+
+let conf =
+    {
+        out_ch = stdout;
+        default_value = 0xF4F4;
+        base_addr = 0xFF8000;
+        d = 16384;
+        input = [];
+        laddr = [];
+        loffset = [];
+    }
+
+let usage = Printf.sprintf "usage: %s [OPTION]... [FILES]..." Sys.argv.(0)
+let args = Arg.align [("-o",
+                       Arg.String (fun x -> conf.out_ch <- open_out x),
+                       "<file> output file");
+                      ("-b",
+                       Arg.Int (fun x -> conf.base_addr <- x),
+                       "<addr> Set RAM base address");
+                      ("-i",
+                       Arg.Tuple
+                       [Arg.String (fun x -> conf.input <- x::conf.input);
+                        Arg.Int (fun x -> conf.laddr <- x::conf.laddr);
+                        Arg.Int (fun x -> conf.loffset <- x::conf.loffset)],
+                        "<input_file> <base_addr> <offset> load binary file")]
+
+let radix2str = function
+    | HEX -> "HEX"
+    | BIN -> "BIN"
+
+let output_mif ch mif =
+    begin
+        Printf.fprintf ch "WIDTH=%d;\nDEPTH=%d;\n\n" mif.width mif.depth;
+        Printf.fprintf ch "ADDRESS_RADIX=%s;\nDATA_RADIX=%s;\n\n"
+        (radix2str mif.addr_radix) (radix2str mif.data_radix);
+        Printf.fprintf ch "CONTENT BEGIN\n";
+        for i = 0 to mif.depth - 1 do
+            Printf.fprintf ch "\t%X: %X;\n" i mif.mem.(i)
+        done;
+        Printf.fprintf ch "END;\n";
+    end
+
+let rec load_file ch addr mif =
+    try
+        if (addr < mif.depth) then
+            begin
+                let lsb = input_byte ch in
+                let msb = try input_byte ch with End_of_file -> 0 in
+                mif.mem.(addr) <- (msb lsl 8) lor lsb;
+                load_file ch (addr + 1) mif
+            end
+    with End_of_file -> ()
+
+let rec load_files f addr offset mif =
+    match (f, addr, offset) with
+    | (f::ft, a::at, o::ot) ->
+            begin
+                let ch = open_in f in
+                seek_in ch o;
+                load_file ch ((a - conf.base_addr) lsr 1) mif;
+                close_in ch;
+                load_files ft at ot mif
+            end
+    | ([], _, _) | (_, [], _) | (_, _, []) -> ()
+
+let main () =
+    Arg.parse args (fun _ -> ()) usage;
+    let mif = {
+        width = 16;
+        depth = conf.d;
+        addr_radix = HEX;
+        data_radix = HEX;
+        mem = Array.make conf.d conf.default_value;
+    } in
+    load_files conf.input conf.laddr conf.loffset mif;
+    output_mif conf.out_ch mif;
+    exit 0
+
+let _ = main ()

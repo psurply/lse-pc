@@ -1,0 +1,14 @@
+[labels]
+MCP1700
+device=MCP1700
+refdes=U?
+! footprint=TO92
+
+[left]
+2 VIN
+
+[right]
+3 VOUT
+
+[bottom]
+1 GND

@@ -1,0 +1,14 @@
+[labels]
+LM1086
+device=LM1086
+refdes=U?
+! footprint=TO220
+
+[left]
+3 IN
+
+[right]
+2 OUT
+
+[bottom]
+1 ADJ

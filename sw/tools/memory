@@ -1,0 +1,184 @@
+#!/usr/bin/env python3
+
+import argparse
+import memory_script
+import re
+import string
+import subprocess
+import sys
+import tempfile
+import time
+
+# Define new type to be able to recognize integers in any bases
+def auto_int(nb):
+    return int(nb, 0)
+
+# Argument parser
+def arg_parse():
+    parser = argparse.ArgumentParser(description="Helper for Quartus terminal commands.")
+    subparsers = parser.add_subparsers()
+
+    # 'dump' subcommand
+    dump_parser = subparsers.add_parser(
+            name='dump',
+            description='Dump the internal RAM of the LSE-PC',
+            help='dump the internal RAM')
+    dump_parser.add_argument('-o', '--offset', type=auto_int, default=0,
+                              help='Address offset')
+    dump_parser.add_argument('-s', '--size', type=auto_int, default=0x8000,
+                              help='Bytes length to retrieve')
+    dump_parser.add_argument('-g', '--granularity', type=auto_int, default=8,
+                              help='Number of 16-bit data per line')
+    dump_parser.add_argument('--loop', type=auto_int, default=-1,
+                              help='Loop with delay in second')
+    dump_parser.set_defaults(action='dump')
+
+    # 'flash' subcommand
+    flash_parser = subparsers.add_parser(
+            name='flash',
+            description='Flash the LSE-PC ROM with the given MIF file',
+            help='flash the ROM')
+    flash_parser.add_argument('mif', type=str, help='MIF file')
+    flash_parser.set_defaults(action='flash')
+
+    if len(sys.argv) == 1:
+        parser.print_help()
+        sys.exit(1)
+
+    return parser.parse_args()
+
+
+# Get the `jtagconfig' configuration variables
+def get_config():
+    conf = subprocess.Popen("jtagconfig", shell=False,
+                            stdout=subprocess.PIPE).stdout.read()
+    lines = conf.decode().split('\n')
+
+    match = re.match(r'[0-9]+\) (USB-Blaster .*)', lines[0])
+    if match == None:
+        print("Connect your JTAG hardware or run `jtagd' as root process",
+              file=sys.stderr)
+        exit(1)
+
+    hardware = match.group(1).replace('[', '\[').replace(']', '\]')
+
+    match = re.match(r'\s+([0-9A-Z]+)\s+([0-9A-Z/]+)', lines[1])
+    if match == None:
+        print("Connect your JTAG hardware or run `jtagd' as root process",
+              file=sys.stderr)
+        exit(1)
+
+    device = '@1: ' + match.group(2) + ' (0x' + match.group(1) + ')'
+
+    return hardware, device
+
+
+# Print `quartus_stp' output without garbage informations
+def quartus_filter(output):
+    tmp = ''
+    for line in output.decode().split('\n'):
+        if line.strip()[:4] != 'Info':
+            tmp += line + '\n'
+
+    return tmp
+
+
+# Check if a character is printable or not
+def is_printable(char):
+    return char == ' ' or char in (string.digits + string.ascii_letters
+                                   + string.punctuation)
+
+
+# Format the internal RAM string
+def ram_format(offset, size, granu, ram):
+    tmp = 0
+    output = ''
+    counter = 0
+    i = (size * 4) - 1
+
+    while i > 2:
+        output += '{0:4X}    '.format(offset)
+
+        hex_values = ''
+        line = ''
+        for _ in range(granu):
+            if i < 3:
+                break
+
+            hex_str1 = ram[i - 3] + ram[i - 2]
+            hex_str2 = ram[i - 1] + ram[i]
+            line += hex_str1 + ' ' + hex_str2 + '  '
+
+            char = chr(int(hex_str1, 16))
+            hex_values += '.' if not is_printable(char) else char
+            char = chr(int(hex_str2, 16))
+            hex_values += '.' if not is_printable(char) else char
+
+            i -= 4
+
+        output += '{0: <{size}}  '.format(line, size=len('XX XX  ') * granu)
+        output += hex_values + '\n'
+
+        offset += granu
+        counter = 0
+
+    return output
+
+
+# Dump the internal RAM
+def dump_ram(hardware, device, offset, size, granu, loop):
+    if offset + size > 32768:
+        size = 32768 - offset
+        print("Warning: size truncated to", size, "to avoid going out of RAM")
+
+    size = int(size / 2)
+
+    with tempfile.NamedTemporaryFile() as tmp:
+        script = memory_script.dump.format(hardware=hardware, device=device,
+                                           offset=offset, length=size)
+
+        tmp.write(script.encode())
+        tmp.flush()
+
+        while True:
+            try:
+                ram = quartus_filter(
+                        subprocess.check_output(['quartus_stp', '-t',
+                                                 tmp.name]))
+                sys.stdout.write(ram_format(offset, size, granu, ram))
+            except subprocess.CalledProcessError as error:
+                sys.stdout.write(quartus_filter(error.output))
+                exit(1)
+
+            if loop < 0:
+                break
+
+            time.sleep(loop)
+
+
+# Flash the ROM with the given MIF file
+def flash_rom(hardware, device, mif):
+    with tempfile.NamedTemporaryFile() as tmp:
+        script = memory_script.flash.format(hardware=hardware, device=device,
+                                            mif=mif)
+        tmp.write(script.encode())
+        tmp.flush()
+
+        try:
+            sys.stdout.write(quartus_filter(
+                subprocess.check_output(['quartus_stp', '-t', tmp.name])))
+            print("ROM successfully flashed !")
+        except subprocess.CalledProcessError as error:
+            sys.stdout.write(quartus_filter(error.output))
+            exit(1)
+
+
+if __name__ == "__main__":
+    args = arg_parse()
+
+    hardware, device = get_config()
+    if args.action == 'dump':
+        dump_ram(hardware, device, args.offset, args.size, args.granularity,
+                 args.loop)
+    elif args.action == 'flash':
+        flash_rom(hardware, device, args.mif)

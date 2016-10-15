@@ -1,0 +1,15 @@
+[labels]
+OSC
+device=OSC
+refdes=U?
+! footprint=DIP14
+
+[left]
+1 NC
+
+7 GND
+
+[right]
+14 VCC
+
+8 OUT

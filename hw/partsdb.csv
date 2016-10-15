@@ -1,0 +1,62 @@
+device,value,manufacturer-part-number,digikey-buy-url,digikey-price,farnell-buy-url,farnell-price,itead-buy-url,itead-price,comment,footprint,unused,qty,optional,distributor
+AS6C8016,unknown,AS6C8016-55ZIN,http://www.digikey.com/product-detail/en/AS6C8016-55ZIN/1450-1041-ND/4234600,5.82,http://fr.farnell.com/alliance-memory/as6c8016-55zin/sram-8mb-2-7-5-5v-512kx16-tsop44/dp/1562906,8.08,,,,,,,,digikey
+SST39SF040,unknown,SST39SF040-70-4C-PHE,http://www.digikey.fr/product-detail/fr/SST39SF040-70-4C-PHE/SST39SF040-70-4C-PHE-ND/2297835,1.96,"http://fr.farnell.com/amic/a29040c-55f/memoire-cmos-4-mbits-dip-32/dp/2414325,2.84,,DIP32",2.84,,,,DIP32,yes,,,surply
+CAPACITOR,47p,MC0805N470J500CT,http://www.digikey.fr/product-detail/fr/FK28C0G1H470J/445-4722-ND/2050071,0.27,http://fr.farnell.com/multicomp/mc0805n470j500ct/condensateur-mlcc-c0g-np0-47pf/dp/1759199,0.0225,,,x10,CAPC2012L,,,,farnell
+CAPACITOR,2.2n,K222K15X7RF5TL2,http://www.digikey.fr/product-detail/fr/K222K15X7RF5TL2/BC1074CT-ND/286696,0.29,http://fr.farnell.com/kemet/c315c222k1r5ta/condensateur-mlcc-x7r-2-2nf-100v/dp/1457644,0.223,,,x10,ACY100,yes,,,digikey
+CAPACITOR,4.7n,K472K15X7RF5TL2,http://www.digikey.fr/product-detail/fr/K472K15X7RF5TL2/BC1076CT-ND/286698,0.29,http://fr.farnell.com/vishay/k472k15x7rf5tl2v/condensateur-mlcc-x7r-4700pf-50v/dp/2383397,0.12,,,x1,ACY100,yes,,,digikey
+CAPACITOR,10n,,http://www.digikey.com/product-detail/en/K103K15X7RF5TL2/BC1078CT-ND/286700,0.31,http://fr.farnell.com/multicomp/mcrr25103x7rk0050/condensateur-ceramique-x7r-10nf/dp/1216435,0.0883,,,x5,ACY100,yes,,,
+CAPACITOR,100n,MC0805B104K160CT,http://www.digikey.fr/product-search/fr?KeyWords=445-5303-ND&WT.z_header=search_go,0.27,http://fr.farnell.com/multicomp/mc0805b104k160ct/condensateur-mlcc-x7r-100nf-0805/dp/1759143,0.0122,,,x100,CAPC2012L,,,,farnell
+CAPACITOR,0.47u,,http://www.digikey.com/product-detail/en/FK18X7R1C474K/445-8419-ND/2815349,0.32,http://fr.farnell.com/kemet/c322c474m5u5ta/condensateur-mlcc-z5u-470nf-50v/dp/1457710,0.4,,,,ACY200,yes,,,
+CAPACITOR,1u,GRM21BR71A105KA01L,http://www.digikey.fr/product-search/fr?KeyWords=445-8395-ND&WT.z_header=search_go,0.28,http://fr.farnell.com/murata/grm21br71a105ka01l/condensateur-mlcc-x7r-1uf-10v/dp/1828827,0.0494,,,x50,CAPC2012L,,,,farnell
+CAPACITOR,4.7u,C2012X5R1A475K125AA,http://www.digikey.fr/product-search/fr?KeyWords=445-8404-ND&WT.z_header=search_go,0.3,http://fr.farnell.com/tdk/c2012x5r1a475k125aa/condensateur-mlcc-x5r-4-7uf-10v/dp/2346923,0.0792,,,x50,CAPC2012L,,,,farnell
+CAPACITOR,10u,C2012X5R1A106K125AB,http://www.digikey.fr/product-search/fr?KeyWords=445-8396-ND&WT.z_header=search_go,0.38,http://fr.farnell.com/tdk/c2012x5r1a106k125ab/condensateur-mlcc-x5r-10uf-10v/dp/2346919,0.0655,,,x50,CAPC2012L,,,,farnell
+CAPACITOR,100u,,http://www.digikey.fr/product-detail/fr/ECA-1VM101/P5165-ND/245024,0.24,http://fr.farnell.com/avx/tap107m006ccs/condensateur-tantale-100uf-6-3v/dp/1100455,1.24,,,x5,ACY200,yes,,,
+CONNECTOR_4,USB_B,670688000,http://www.digikey.fr/product-search/fr?KeyWords=WM17113-ND&WT.z_header=search_go,1.29,http://fr.farnell.com/multicomp/mc32596/fiche-fem-usb-ci-coudee-type-b/dp/1696537?MER=en-me-pd-r2-alte-con,0.68,http://imall.iteadstudio.com/im120814003.html,$0.60,,,yes,,1,itead
+EP4CE22E22C7N,unknown,EP4CE22E22C7N,,,http://fr.farnell.com/altera/ep4ce22e22c8n/fpga-cyclone-iv-22k-144eqfp/dp/2100833,37.38,,,x5,EQFP144,,,,farnell
+EP4CE6E22C8N,unknown,EP4CE6E22C8N,http://www.digikey.fr/product-search/fr?KeyWords=544-2746-ND&WT.z_header=search_go,11.32,http://fr.farnell.com/altera/ep4ce6e22c8n/fpga-cyclone-iv-6k-144eqfp/dp/2100851,15.67,,,,,yes,,,digikey
+FT232R,unknown,,http://www.digikey.fr/product-detail/fr/FT232RL-REEL/768-1007-1-ND/1836402,4.26,http://fr.farnell.com/ftdi/ft232rl/usb-vers-uart-cms-ssop28-232/dp/1146032RL,5.78,,,,,yes,,1,
+FT2232D,unknown,,http://www.digikey.fr/product-detail/fr/FT2232D-REEL/768-1010-1-ND/1836405,6.62,,,,,,,yes,,,
+FT230X,unknown,FT230XS-R,http://www.digikey.fr/product-detail/fr/FT230XS-R/768-1135-1-ND/3029155,1.93,,,,,,SSOP16,,,,digikey
+HEADER10,unknown,PRPC010SAAN-RC,http://www.digikey.fr/product-detail/fr/PRPC010SAAN-RC/S1011EC-10-ND/2775244,0.28,http://fr.farnell.com/te-connectivity-amp/1-826629-6/embase-male-16-voies-droite/dp/1248124,0.976,http://imall.iteadstudio.com/electronic-components/connectors/header/im120706002.html,$1.50,itead: 40pin x5,,,,1,itead
+HEADER50,unknown,SSW-125-01-T-D,http://www.digikey.fr/product-search/fr?KeyWords=SAM1212-25-ND&WT.z_header=search_go,4.09,http://fr.farnell.com/samtec/ssw-125-01-t-d/femelle-2-54mm-traversant-50-voies/dp/2308495,3.81,http://imall.iteadstudio.com/im120531014.html,$1.50,itead: 40pin x5,,yes,,1,itead
+HEADER16,female,,http://imall.iteadstudio.com/electronic-components/connectors/header/im120531004.html,1.5,,,,,,2.54,yes,,,
+LED,unknown,KPT-2012EC ,http://www.digikey.fr/product-search/fr?KeyWords=160-1145-ND&WT.z_header=search_go,0.31,http://fr.farnell.com/kingbright/kpt-2012ec/led-rouge-0805-cms/dp/2099236,0.0867,http://imall.iteadstudio.com/electronic-components/leds/discrete-led/im120726016.html,$0.80,10ma 2.1v 33 (itead: x10),,,,1,farnell
+LM1086,3.3V/1.5A,,,,http://fr.farnell.com/texas-instruments/lm1086ct-3-3/regulateur-ldo-1-5a-3-3v-1086-to2203/dp/9489983,1.27,,,,TO220W,yes,,,
+MCP1700,2.5V/250mA,MCP1700-2502E/SOT,http://www.digikey.fr/product-search/fr?vendor=0&keywords=MCP1700-2502E,0.42,http://fr.farnell.com/microchip/mcp1700t-2502e-mb/ic-ldo-reg-250ma-2-5v-sot89/dp/1627196,0.451,,,,SOT89,,,,farnell
+80386SXLP,unknown,NG80386SXLP20,http://www.digikey.fr/product-search/fr/integrated-circuits-ics/embedded-microprocessors/2556260?k=800112-ND,8.01,n/a,,,,,,,,,digikey
+OSC,20M,LFSPXO018032 ,,,http://fr.farnell.com/iqd-frequency-products/lfspxo018032/oscillateur-a-quartz-20mhz/dp/9713670,1.55,,,,,,,,farnell
+OSC,50M,7W-50.000MBB-T,http://www.digikey.fr/product-detail/fr/MXO45HST-3C-20M0000/CTX791-ND/1801906,1.96,http://fr.farnell.com/txc/7w-50-000mbb-t/osc-50-000mhz-3-3v-smd-7-0x5-0/dp/1842144,2.12,,,,,yes,,,farnell
+OSC,24M,,http://www.digikey.fr/product-search/fr?KeyWords=CTX757-ND&WT.z_header=search_go,1.96,,6.46,,,24M is in the 386sx spec,DIP8,yes,,1,digikey
+POLARIZED_CAPACITOR,10u,,http://www.digikey.com/product-detail/en/USA1V100MDD/493-6010-ND/2539064,0.15,http://fr.farnell.com/multicomp/mcmr63v106m6-3x7/condensateur-elec-alu-10uf-63v/dp/1870986,0.086,,,,RCY100P,yes,,,
+POLARIZED_CAPACITOR,100u,APSA100ELL101MFA5G,http://www.digikey.fr/product-search/fr?KeyWords=565-3047-ND&WT.z_header=search_go,0.67,http://fr.farnell.com/multicomp/mcumhr6v3107m6-3x5/condensateur-elec-alu-100uf-6-3v/dp/9452354,0.0483,,,,RCY100P,yes,,,digikey
+RESISTOR,27,CRCW080527R0FKEA ,http://www.digikey.fr/product-detail/fr/CFR-25JB-52-27R/27QBK-ND/1392,0.09,http://fr.farnell.com/vishay-draloric/crcw080527r0fkea/resistance-0805-27r-1/dp/2138778,0.012,,,x50,RESC2012L,,,,farnell
+RESISTOR,47,ERG-1SJ470V,http://www.digikey.fr/product-detail/fr/ERG-1SJ470V/P47W-1CT-ND/3982522,0.36,http://fr.farnell.com/multicomp/mor0s2j0470a50/resistance-0-5w-5-47r/dp/1357851,0.0133,,,x5,ACY300,yes,,,digikey
+RESISTOR,62,,http://www.digikey.fr/product-detail/fr/CF14JT62R0/CF14JT62R0CT-ND/1830322,0.09,http://fr.farnell.com/welwyn/mfr4-62r-1/resistance-0-5w-1-62r/dp/1099861,0.0139,,,,,yes,,,
+RESISTOR,121,CRCW0805120RFKEA,http://www.digikey.fr/product-detail/fr/CF14JT120R/CF14JT120RCT-ND/1830329,0.09,http://fr.farnell.com/vishay-draloric/crcw0805120rfkea/resistance-120r-0-125w-1-0805/dp/1652914,0.023,,,,RESC2012L,,,,farnell
+RESISTOR,200,,,,http://fr.farnell.com/multicomp/mcmf006ff2000a50/resistance-couche-metal-200r-1/dp/2401735,0.0132,,,,,yes,,,
+RESISTOR,270,,,,http://fr.farnell.com/multicomp/mcmf006ff2700a50/resistance-couche-metal-270r-1/dp/2401738,0.0132,,,,,yes,,,
+RESISTOR,330,,,,http://fr.farnell.com/multicomp/mcmf006ff3300a50/resistance-couche-metal-330r-1/dp/2401740RL,0.0141,,,x50,,yes,,,farnell
+RESISTOR,365,,,,http://fr.farnell.com/vishay-bc-components/mrs25000c3650fct00/resistance-ms25-1-365r/dp/9467548,0.0582,,,,,yes,,,
+RESISTOR,10k,ERJ6GEYJ103V ,http://www.digikey.fr/product-detail/fr/CF14JT10K0/CF14JT10K0CT-ND/1830374,0.09,http://fr.farnell.com/panasonic-electronic-components/erj6geyj103v/resistance-0805-10k-5-0-125w/dp/2057719,0.0141,,,x50,RESC2012L,,,,farnell
+RESISTOR,1k,RT0805FRE071KL,http://www.digikey.fr/product-detail/fr/CF14JT1K00/CF14JT1K00CT-ND/1830350,0.09,http://fr.farnell.com/yageo-phycomp/rt0805fre071kl/resistance-couche-mince-1k-0-125w/dp/1500663,0.0289,,,x5,RESC2012L,,,,farnell
+RESISTOR,20k,MCTC0525B2002T5E,http://www.digikey.fr/product-detail/fr/CF14JT20K0/CF14JT20K0CT-ND/1830382,0.09,http://fr.farnell.com/multicomp/mctc0525b2002t5e/resistance-20k-0805-0-1-25ppm/dp/1575937,0.0562,,,,RESC2012L,,,,farnell
+RESISTOR,47k,CRCW080547K0FKEA ,,,http://fr.farnell.com/vishay-draloric/crcw080547k0fkea/resistance-47k-0-125w-1-0805-cms/dp/1469929,0.019,,,x50,RESC2012L,,,,farnell
+SN74CB3T16210,unknown,SN74CB3T16210DGGR,http://www.digikey.fr/product-detail/fr/SN74CB3T16210DGGR/296-19147-1-ND/864378,3,http://fr.farnell.com/texas-instruments/sn74cb3t16210dggr/commutateur-bus-20bit-fet-48tssop/dp/2101280,3.63,,,,,yes,,,digikey
+SWITCH_DIP4,unknown,210-4MS,http://www.digikey.fr/product-search/fr?KeyWords=CT2104MS-ND&WT.z_header=search_go,0.52,http://fr.farnell.com/te-connectivity/1825002-5/dip-switch-4pos-spst-slide/dp/2452337,0.4,,,,,yes,,1,digikey
+DIP_SUPPORT,8,,http://www.digikey.fr/product-detail/fr/AR-08-HZL-TT/AE10011-ND/821765,0.47,http://fr.farnell.com/harwin/d2608-42/support-ci-sans-soudure-8-voies/dp/1023046,0.854,http://imall.iteadstudio.com/im120807005.html,$0.65,for osc,,yes,1,,itead
+LD6836TD,unknown,,,,http://fr.farnell.com/nxp/ld6836td-12p/ldo-5-5v-0-09vdo-0-3a-1-2v-5sot753/dp/2308308,0.197,,,regu ldo 1v2 sot,SOT-753,yes,,,
+MCP1700,3.3V/250mA,,,,http://fr.farnell.com/microchip/mcp1700-3302e-to/regulateur-ldo-3-3v-250ma-to-92/dp/1296588,0.328,,,,TO92,yes,,,
+MCP1700,1.2V/250mA,,,,http://fr.farnell.com/microchip/mcp1700-1202e-to/ic-ldo-250ma-1-2v-to-92-3/dp/1863922,0.311,,,,TO92,yes,,,
+LD1117A,3.3V/1A,LD1117AS33TR ,http://www.digikey.fr/product-search/fr?KeyWords=497-1485-5-ND&WT.z_header=search_go,0.84,http://fr.farnell.com/stmicroelectronics/ld1117as33tr/regulateur-ldo-3-3v-cms/dp/1467776,1.04,,,,SOT223,,,,farnell
+MCP1826,1.2V/1A,MCP1826S-1202E/DB ,http://www.digikey.fr/product-detail/fr/MCP1826S-3302E%2FAB/MCP1826S-3302E%2FAB-ND/1635996,1.12,http://fr.farnell.com/microchip/mcp1826s-1202e-db/regulateur-ldo-1a-1-2v-sot223/dp/1851995,0.571,,,x10,SOT223,,,,farnell
+MCP1827,2.5V/1.5A,,http://www.digikey.com/product-detail/en/MCP1827-2502E%2FAT/MCP1827-2502E%2FAT-ND/1223045,1.2,http://fr.farnell.com/microchip/mcp1827s-2502e-ab/regulateur-ldo-1-5a-2-5v-to-220/dp/1852010,0.992,,,,TO220W,yes,,,
+DIODE,unknown,1N4007-TP,http://www.digikey.fr/product-detail/fr/1N4007-TP/1N4007-TPMSCT-ND/773694,0.1,http://fr.farnell.com/micro-commercial-components/1n4002-tp/standard-recovery-1a-100v-do-41/dp/1924512,0.048,,,,,yes,,1,digikey
+M25P16,unknown,M25P16,,,http://fr.farnell.com/micron/m25p16-vmn6p/memory-flash-serial-16mbit-8nsoic/dp/1734973,1.04,,,x10,SO8,,,,farnell
+FERRITE,110ohms@100MHz,,,,http://fr.farnell.com/wurth-elektronik/74279245/ferrite-110ohm-4a-1806/dp/1635772,0.27,,,,INDC4532N,,,,farnell
+ITEAD,pcb 10x15,,,48,,,,$48.00,main pcb,,yes,0.1,,itead
+ITEAD,pcb 10x10,,,48,,,,$14.90,ext,,yes,0.2,,itead
+ITEAD,shipping,,,30.68,,,,$30.68,dhl,,yes,0.1,,itead
+ITEAD,pcb 5x5,,,9.9,,,,$9.90,,,yes,0.1,,itead
+FLUX,unknown,,http://www.digikey.fr/product-detail/fr/SMD291NL/SMD291NL-ND/1160000,10.88,,,,,Evolutek,,yes,,,evolutek
+SOLDER_PASTE,unknown,,http://www.digikey.fr/product-search/fr?KeyWords=smd291ax10-nd&WT.z_header=search_go,19.61,,,,,Evolutek,,yes,,,evolutek
+USB,unknown,10033526-N3212MLF,,,http://fr.farnell.com/fci/10033526-n3212mlf/fiche-mini-usb-2-0-type-b-cable/dp/2112367,0.6492,,,,,,,,

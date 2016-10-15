@@ -1,0 +1,17 @@
+[labels]
+M25P16
+! device=M25P16
+refdes=U?
+! footprint=SO8
+
+[left]
+1 ! S
+2 DQ1
+3 ! W
+4 Vss
+
+[right]
+8 Vcc
+7 ! HOLD
+6 C
+5 DQ0

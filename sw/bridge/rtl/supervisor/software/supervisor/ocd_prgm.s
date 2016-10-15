@@ -1,0 +1,235 @@
+	.func ocd_prgm_reset
+	RESET
+	ATTACH
+	EXIT
+
+	.func ocd_prgm_start
+	START
+	DETACH
+	WAITIO
+	LDAL R1
+	LDWR R2
+	EXIT
+
+	.func ocd_prgm_read_io
+	LDD R3
+	EXIT
+
+	.func ocd_prgm_write_io
+	STD R3
+	DETACH
+	WAITIO
+	LDAL R1
+	LDWR R2
+	EXIT
+
+	.func ocd_prgm_break
+	NMI
+	WAITLOCK
+
+	;; Get CPU Mode
+	LDAL R2
+	LDAH R3
+	LDCMP R2
+	LDI R1, 0x0008
+	CMP R1
+	BNE break_protected_mode
+	LDCMP R3
+	BEQ break_real_mode
+
+
+	;; Protected Mode
+break_protected_mode:
+	;;   Fake IDT entry
+	LDI R1, 0b1000111000000000	;; Flags
+	STD R1
+	WAITADS
+	LDI R1, 0x000D			;; Offset[31:16]
+	STD R1
+	WAITADS
+	LDI R1, 0x0000			;; Offset[15:0]
+	STD R1
+	WAITADS
+	LDI R1, 0x0008			;; Segment Selector
+	STD R1
+	WAITADS
+
+	;;  Fake GDT entry
+	LDI R1, 0b1001101000000000	;; Flags | Base[23:16]
+	STD R1
+	WAITADS
+	LDI R1, 0x00CF			;; Base[31:24] | G | D/B | Limit[19:16]
+	STD R1
+	WAITADS
+	LDI R1, 0xFFFF			;; Limit[15:00]
+	STD R1
+	WAITADS
+	LDI R1, 0x0000			;; Base[15:0]
+	STD R1
+	WAITADS
+	READY				;; GDT Access bit
+	WAITADS
+
+	;;  Drive NOP NOP
+	LDI R1, 0x9090
+	STD R1
+	WAITADS
+
+	;;  Context saving
+	LDD R2		;; EFLAGS[15:0]
+	READY
+	WAITADS
+	LDD R3		;; EFLAGS[31:16]
+	READY
+	WAITADS
+	LDD R4		;; CS
+	READY
+	WAITADS
+	LDD R5		;; EIP[15:0]
+	READY
+	WAITADS
+	LDD R6		;; EIP[31:16]
+	READY
+
+	LDI R1, 1
+	HOLD
+	EXIT
+
+	;; Real Mode
+break_real_mode:
+	LDI R1, 0x0000
+	STD R1
+	WAITADS
+	LDI R1, 0xD000
+	STD R1
+	CLR R1
+	HOLD
+	EXIT
+
+	.func ocd_prgm_cont
+	;; R2-R3: EFLAGS
+	;; R4: CS
+	;; R5-R6: EIP
+	LDI R1, 0x90CF
+	LDI R7, 0x9090
+	WAITADS
+
+	;; Instruction prefetch
+	STD R1
+	WAITADS
+	STD R7
+	WAITADS
+	STD R7
+	WAITADS
+	STD R7
+	WAITADS
+
+	;; Stack Access
+	STD R5		;; EIP[15:0]
+	WAITADS
+	STD R6		;; EIP[31:16]
+	WAITADS
+	STD R4		;; CS
+	WAITADS
+	STD R0
+	WAITADS
+	STD R2		;; EFLAGS[15:0]
+	WAITADS
+	STD R3		;; EFLAGS[31:16]
+
+	DETACH
+	WAITIO
+	LDAL R1
+	LDWR R2
+	EXIT
+
+	.func ocd_prgm_get_regs
+	LDI R1, 0x9060
+	LDI R2, 0x9090
+	WAITADS
+
+	;; Instruction prefetch
+	STD R1		;; Drive PUSHA; NOP
+	WAITADS
+	STD R2		;; Drive NOP; NOP
+	WAITADS
+	STD R2
+	WAITADS
+	STD R2
+	WAITADS
+	STD R2
+	WAITADS
+
+	;; PUSHA
+	LDD R0
+	READY
+	WAITADS
+	LDD R1
+	READY
+	WAITADS
+	LDD R2
+	READY
+	WAITADS
+	LDD R3
+	READY
+	WAITADS
+	LDD R4
+	READY
+	WAITADS
+	LDD R5
+	READY
+	WAITADS
+	LDD R6
+	READY
+	WAITADS
+	LDD R7
+	READY
+	WAITADS
+	LDD R8
+	READY
+	WAITADS
+	LDD R9
+	READY
+	WAITADS
+	LDD R10
+	READY
+	WAITADS
+	LDD R11
+	READY
+	WAITADS
+	LDD R12
+	READY
+	WAITADS
+	LDD R13
+	READY
+	WAITADS
+	LDD R14
+	READY
+	WAITADS
+	LDD R15
+	READY
+
+	HOLD
+	EXIT
+
+
+	.func ocd_prgm_set_reg
+	;; R1 <- 0xBx90
+	;; R2 <- LSB
+	;; R3 <- MSB
+	LDI R4, 0x9090
+	WAITADS
+
+	;; Instruction prefetch
+	STD R1
+	WAITADS
+	STD R2
+	WAITADS
+	STD R3
+	WAITADS
+	STD R4
+	WAITADS
+	STD R4
+
+	HOLD
+	EXIT

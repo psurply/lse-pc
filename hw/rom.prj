@@ -1,0 +1,6 @@
+elements-dir ./footprints
+
+schematics sch/ext/conn.sch
+schematics sch/ext/rom/flash.sch
+
+output-name pcb/rom

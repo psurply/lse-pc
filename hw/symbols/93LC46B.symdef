@@ -1,0 +1,20 @@
+# http://ww1.microchip.com/downloads/en/DeviceDoc/20001749K.pdf
+[labels]
+93LC46B
+device=93LC46B
+refdes=U?
+! footprint=DIP8
+
+[left]
+1 CS
+2 CLK
+3 DI
+4 DO
+
+[top]
+8 Vcc
+
+[bottom]
+7 NC
+6 NC
+5 Vss

@@ -1,0 +1,6 @@
+*.bin
+*.mif
+*.o
+*.d
+bios
+rootfs.cpio

@@ -1,0 +1,43 @@
+[labels]
+AS6C4008
+device=AS6C4008
+refdes=U?
+! footprint=DIP32
+
+[left]
+13 DQ0
+14 DQ1
+15 DQ2
+17 DQ3
+18 DQ4
+19 DQ5
+20 DQ6
+21 DQ7
+
+29 ! WE
+24 ! OE
+22 ! CE
+
+32 Vcc
+16 Vss
+
+[right]
+12 A0
+11 A1
+10 A2
+9 A3
+8 A4
+7 A5
+6 A6
+5 A7
+27 A8
+26 A9
+23 A10
+25 A11
+4 A12
+28 A13
+3 A14
+31 A15
+2 A16
+30 A17
+1 A18

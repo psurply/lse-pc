@@ -1,0 +1,11 @@
+elements-dir ./footprints
+elements-dir /usr/share/pcb/pcblib-newlib/geda/
+
+schematics sch/mobo/cpu.sch
+schematics sch/mobo/conf.sch
+schematics sch/mobo/io.sch
+schematics sch/mobo/memory.sch
+schematics sch/mobo/power.sch
+schematics sch/mobo/usb.sch
+
+output-name pcb/mobo

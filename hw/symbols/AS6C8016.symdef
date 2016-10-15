@@ -1,0 +1,62 @@
+--vmode
+--compact
+
+[labels]
+AS6C8016
+device=AS6C8016
+refdes=U?
+! footprint=TSOP44
+
+[left]
+7 DQ0
+8 DQ1
+9 DQ2
+10 DQ3
+13 DQ4
+14 DQ5
+15 DQ6
+16 DQ7
+29 DQ8
+30 DQ9
+31 DQ10
+32 DQ11
+35 DQ12
+36 DQ13
+37 DQ14
+38 DQ15
+
+6 ! CE
+17 ! WE
+
+39 ! LB
+40 ! UB
+41 ! OE
+
+[right]
+5 A0
+4 A1
+3 A2
+2 A3
+1 A4
+44 A5
+43 A6
+42 A7
+28 A8
+27 A9
+26 A10
+25 A11
+24 A12
+23 A13
+22 A14
+21 A15
+20 A16
+19 A17
+18 A18
+
+[top]
+33 Vcc
+11 Vcc
+
+[bottom]
+12 Vss
+34 Vss

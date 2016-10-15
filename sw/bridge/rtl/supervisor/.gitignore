@@ -1,0 +1,9 @@
+*.objdump
+*.a
+*.bsf
+*.cmp
+*.html
+.qsys_edit/
+*.sopcinfo
+supervisor_qsys/
+.force_rebuild_all

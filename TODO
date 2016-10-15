@@ -1,0 +1,26 @@
+Current PCB version:
+
+- Supervisor:
+    - Design a sane protocol between NIOS and host
+        - Breakpoint handling
+        - Reset CPU from host
+    - Configurable breakpoints:
+        - Memory/IO
+        - Data/Command
+        - Read/Write
+        - Range
+    - Put NIOS elf in flash memory
+    - Design a sane API for the lsepc library
+- Write a BIOS which is able to load code from serial line
+    - Fix 16650 uart module
+    - Interactive mode
+- Porting STOS:
+    - Write a dedicated bootloader
+    - Rewrite incompatible modules (paging, ...)
+- Add documentation about:
+    - Bridge design
+    - Supervisor
+
+Next PCB version:
+- Wire BUSY# and ERROR# signals
+    - Add x87 to bridge design

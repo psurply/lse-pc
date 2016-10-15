@@ -1,0 +1,112 @@
+--vmode
+--compact
+
+[labels]
+80386SXLP
+! device=80386SXLP
+refdes=U?
+! footprint=PQFP100
+
+[left]
+15 > CLK2
+
+1 D0
+100 D1
+99 D2
+96 D3
+95 D4
+94 D5
+93 D6
+92 D7
+90 D8
+89 D9
+88 D10
+87 D11
+86 D12
+83 D13
+82 D14
+81 D15
+
+16 ! ADS
+6 ! NA
+7 ! READY
+
+4 HOLD
+3 HLDA
+
+40 > INTR
+38 > NMI
+33 RESET
+28 ! FLT
+
+[right]
+18 A1
+51 A2
+52 A3
+53 A4
+54 A5
+55 A6
+56 A7
+58 A8
+59 A9
+60 A10
+61 A11
+62 A12
+64 A13
+65 A14
+66 A15
+70 A16
+72 A17
+73 A18
+74 A19
+75 A20
+76 A21
+79 A22
+80 A23
+19 ! BHE
+17 ! BLE
+
+25 ! W/R
+24 ! D/C
+23 ! M/IO
+26 ! LOCK
+
+37 PEREQ
+34 ! BUSY
+36 ! ERROR
+
+[top]
+8 Vcc
+9 Vcc
+10 Vcc
+21 Vcc
+32 Vcc
+39 Vcc
+42 Vcc
+48 Vcc
+57 Vcc
+69 Vcc
+71 Vcc
+84 Vcc
+91 Vcc
+97 Vcc
+
+[bottom]
+2 Vss
+5 Vss
+11 Vss
+12 Vss
+13 Vss
+14 Vss
+22 Vss
+35 Vss
+41 Vss
+49 Vss
+50 Vss
+63 Vss
+67 Vss
+68 Vss
+77 Vss
+78 Vss
+85 Vss
+98 Vss
